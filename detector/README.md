@@ -26,6 +26,18 @@ Create a fast real-time face recognition app with a few lines of Python code. Th
 
 Requirements:
 
-- `pip install opencv-python`
-- `pip install opencv-contrib-python --upgrade` or `pip install opencv-contrib-python`
-- `pip install pillow`
+Install [pyenv win](https://github.com/pyenv-win/pyenv-win)
+
+```cmd
+pyenv install 3.12.3
+pyenv local 3.12.3
+```
+
+to setup virtual environment use the commands below
+
+```cmd
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+```
+
