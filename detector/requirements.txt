@@ -1,0 +1,9 @@
+opencv-python
+opencv-contrib-python
+pillow
+deepface
+tf_keras
+#send whats up
+#pywhatkit
+
+telethon #telegram
