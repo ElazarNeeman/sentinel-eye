@@ -1,9 +1,11 @@
-opencv-python
-opencv-contrib-python
-pillow
-deepface
-tf_keras
+setuptools==69.5.1
+tensorflow==2.16.1
+opencv-python==4.9.0.80
+opencv-contrib-python==4.9.0.80
+pillow==10.3.0
+deepface==0.0.91
+tf_keras==2.16.0
 #send whats up
 #pywhatkit
 
-telethon #telegram
+Telethon==1.35.0 #telegram

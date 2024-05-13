@@ -21,8 +21,8 @@ class DetectionAlarm:
         file_name = f'./alarms/Users-{round(alarm_time)}.jpg'
         cv2.imwrite(file_name, face)
 
-        # self.client.send_message('+972545664107', )
-        self.client.send_file('+972545664107',file_name, caption=f'Person {name} detected at {time.ctime()}, info: {alarm_data}')
+        if self.client:
+            self.client.send_file('+972545664107',file_name, caption=f'Person {name} detected at {time.ctime()}, info: {alarm_data}')
 
         self.alarm_time[name] = alarm_time
 

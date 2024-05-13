@@ -5,8 +5,10 @@ from telethon import TelegramClient, events, sync
 api_id = 123456
 api_hash = '123546789abcdef'
 
-client = TelegramClient('session_name', api_id, api_hash)
-client.start()
+# client = TelegramClient('session_name', api_id, api_hash)
+# client.start()
+
+client = None
 
 #client.send_message('+972545664107', 'Hello! Talking to you from Telethon')
 # name = "Elazar"

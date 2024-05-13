@@ -38,8 +38,8 @@ if __name__ == "__main__":
         names = list(names.values())
 
     # Video Capture from the default camera (camera index 0)
-    # cam = cv2.VideoCapture(0)
-    cam = cv2.VideoCapture("rtsp://10.100.102.61:8554/stream")
+    cam = cv2.VideoCapture(0)
+    # cam = cv2.VideoCapture("rtsp://10.100.102.61:8554/stream")
 
     # cam = cv2.VideoCapture("rtsp://10.100.102.62:8554/substream")
     cam.set(3, 640)  # Set width
@@ -63,7 +63,6 @@ if __name__ == "__main__":
         frame_time = time.time()
 
         cv2.imshow('camera', img)
-        continue
 
         if (cnt % skip_frames) != 0:
             continue
