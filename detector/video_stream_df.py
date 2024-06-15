@@ -1,66 +1,13 @@
-import os
-
 import cv2
 import time
-from threading import Thread  # library for implementing multi-threaded processing
 
 import numpy as np
 from deepface import DeepFace
 
+from identity import get_name
+from video import VideoStream
 
 # defining a helper class for implementing multi-threaded processing
-class WebcamStream:
-    def __init__(self, stream_id=0):
-        self.stream_id = stream_id  # default is 0 for primary camera
-
-        # opening video capture stream
-        self.vcap = cv2.VideoCapture(self.stream_id)
-        if self.vcap.isOpened() is False:
-            print("[Exiting]: Error accessing webcam stream.")
-            exit(0)
-        fps_input_stream = int(self.vcap.get(5))
-        print("FPS of webcam hardware/input stream: {}".format(fps_input_stream))
-
-        # reading a single frame from vcap stream for initializing
-        self.grabbed, self.frame = self.vcap.read()
-        if self.grabbed is False:
-            print('[Exiting] No more frames to read')
-            exit(0)
-
-        # self.stopped is set to False when frames are being read from self.vcap stream
-        self.stopped = True
-
-        # reference to the thread for reading next available frame from input stream
-        self.t = Thread(target=self.update, args=())
-        self.t.daemon = True  # daemon threads keep running in the background while the program is executing
-
-    # method for starting the thread for grabbing next available frame in input stream
-    def start(self):
-        self.stopped = False
-        self.t.start()
-
-        # method for reading next frame
-
-    def update(self):
-        while True:
-            if self.stopped is True:
-                break
-            self.grabbed, self.frame = self.vcap.read()
-            if self.grabbed is False:
-                print('[Exiting] No more frames to read')
-                self.stopped = True
-                break
-        self.vcap.release()
-
-    # method for returning latest read frame
-    def read(self):
-        return self.frame
-
-    # method called to stop reading frames
-    def stop(self):
-        self.stopped = True
-
-    # initializing and starting multi-threaded webcam capture input stream
 
 
 # we are not going to bother with objects less than 50% probability
@@ -68,18 +15,6 @@ THRESHOLD = 0.4
 # the lower the value: the fewer bounding boxes will remain
 SUPPRESSION_THRESHOLD = 0.3
 SSD_INPUT_SIZE = 320
-
-
-def get_name(_res):
-    if len(_res) == 0 or len(_res[0]['identity']) == 0:
-        return None
-
-    identity_path = _res[0]['identity'][0]
-    _, identity_file = os.path.split(identity_path)
-
-    # print(identity_file)
-    name = identity_file.split('-')[-2]
-    return name
 
 
 # read the class labels
@@ -161,7 +96,7 @@ def show_detected_faces(img, person_position):
 
 class_names = construct_class_names()
 
-webcam_stream = WebcamStream(stream_id=0)  # stream_id = 0 is for primary camera
+webcam_stream = VideoStream(stream_id=0)  # stream_id = 0 is for primary camera
 webcam_stream.start()
 
 neural_network = cv2.dnn_DetectionModel('weights/ssd_weights.pb', 'weights/ssd_mobilenet_coco_cfg.pbtxt')

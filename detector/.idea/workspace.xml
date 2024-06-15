@@ -4,35 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18bdb72a-ac12-4c15-bf28-dc58dc1002c2" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/im_db_team/Elazar-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/im_db_team/Elazar-02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/im_db_team/Itai-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/im_db_team/Itai-02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/im_db_team/Lina-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/im_db_team/Ofer-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/im_db_team/Revital-01.jpg" afterDir="false" />
+    <list default="true" id="18bdb72a-ac12-4c15-bf28-dc58dc1002c2" name="Changes" comment="folder rearrangement">
+      <change afterPath="$PROJECT_DIR$/identity.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deep_judge_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/deep_judge_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_recognizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/poc/lpph/face_recognizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_taker.py" beforeDir="false" afterPath="$PROJECT_DIR$/poc/lpph/face_taker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/poc/lpph/face_train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/haarcascade_frontalface_default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weights/haarcascade_frontalface_default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/im_db_judges1/Adi Sofer-01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Adi Sofer-01.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/im_db_judges1/Barak Regev-01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Barak Regev-01.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/im_db_judges1/Dror Bin-01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Dror Bin-01.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/im_db_judges1/Elazar-01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Elazar-01.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/im_db_judges1/Elazar-02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Elazar-02.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/im_db_judges1/Izhar Shai-01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Izhar Shai-01.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/im_db_judges1/Lili Ben Ami-01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Lili Ben Ami-01.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/im_db_judges1/Meissam Jaljuli-01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Meissam Jaljuli-01.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/im_db_judges1/Meissam Jaljuli-02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Meissam Jaljuli-02.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/im_db_judges1/Revital-01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Revital-01.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/im_db_judges1/Revital-02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Revital-02.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/im_db_judges1/Shira Lev Ami-01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Shira Lev Ami-01.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssd_mobilenet_coco_cfg.pbtxt" beforeDir="false" afterPath="$PROJECT_DIR$/weights/ssd_mobilenet_coco_cfg.pbtxt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssd_weights.pb" beforeDir="false" afterPath="$PROJECT_DIR$/weights/ssd_weights.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-faces.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/test_images/test-faces.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/video_stream_df.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_stream_df.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -159,7 +134,7 @@
       <workItem from="1715618128341" duration="73000" />
       <workItem from="1715618260545" duration="88000" />
       <workItem from="1715618384324" duration="990000" />
-      <workItem from="1718435468691" duration="2410000" />
+      <workItem from="1718435468691" duration="3362000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -169,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715619318653</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="folder rearrangement">
+      <option name="closed" value="true" />
+      <created>1718438149975</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1718438149975</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,9 +171,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="folder rearrangement" />
+    <option name="LAST_COMMIT_MESSAGE" value="folder rearrangement" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/detector$video_stream_df.coverage" NAME="video_stream_df Coverage Results" MODIFIED="1718437422428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/detector$video_stream_df.coverage" NAME="video_stream_df Coverage Results" MODIFIED="1718438758046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
