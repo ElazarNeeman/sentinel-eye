@@ -5,6 +5,7 @@ from telethon import TelegramClient, events, sync
 api_id = 123456
 api_hash = '123546789abcdef'
 
+channel_id = -1002201490384
 # client = TelegramClient('session_name', api_id, api_hash)
 # client.start()
 

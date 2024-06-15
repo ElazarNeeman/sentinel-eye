@@ -1,15 +1,18 @@
+import asyncio
+import queue
+import threading
 import time
 
 import cv2
 from telethon import TelegramClient
-import queue
-import threading
+
 from detection_aggragate import DetectionAggregate
+from telegram import channel_id
 
 
 class DetectionAlarm:
 
-    def __init__(self, client: TelegramClient):
+    def __init__(self, client:  TelegramClient):
         self.agg = DetectionAggregate()
         self.client = client
         self.alarm_time = {}
@@ -19,6 +22,12 @@ class DetectionAlarm:
         self.alarm_thread.start()
 
     def alarm_worker(self):
+        asyncio.set_event_loop(asyncio.new_event_loop())
+
+        if self.client:
+            self.client.start()
+            self.client.send_message(channel_id, 'Hello, a-eye!')
+
         while True:
             alarm_data, face = self.alarm_queue.get()
             if alarm_data is None:
@@ -34,7 +43,7 @@ class DetectionAlarm:
         cv2.imwrite(file_name, face)
 
         if self.client:
-            self.client.send_file('+972545664107', file_name,
+            self.client.send_file(channel_id, file_name,
                                   caption=f'Person {name} detected at {time.ctime()}, info: {alarm_data}')
 
         self.alarm_time[name] = alarm_time
