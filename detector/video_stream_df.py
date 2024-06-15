@@ -1,4 +1,3 @@
-# importing required libraries
 import os
 
 import cv2
@@ -72,15 +71,15 @@ SSD_INPUT_SIZE = 320
 
 
 def get_name(_res):
-    if len(_res) > 0 and len(_res[0]['identity']) > 0:
-        identity_path = _res[0]['identity'][0]
-        _, identity_file = os.path.split(identity_path)
+    if len(_res) == 0 or len(_res[0]['identity']) == 0:
+        return None
 
-        # print(identity_file)
-        name = identity_file.split('-')[-2]
-        return name
+    identity_path = _res[0]['identity'][0]
+    _, identity_file = os.path.split(identity_path)
 
-    return None
+    # print(identity_file)
+    name = identity_file.split('-')[-2]
+    return name
 
 
 # read the class labels
@@ -127,8 +126,10 @@ def show_detected_faces(img, person_position):
         y = y + py
         detected_face = img[y:y + h, x:x + w]
 
-        res = DeepFace.find(img_path=detected_face, db_path="im_db_judges1", align=False,
+        res = DeepFace.find(img_path=detected_face, db_path="im_db_team", align=False,
+                            detector_backend="skip",
                             enforce_detection=False, silent=True)
+
         name = get_name(res)
 
         demographies = DeepFace.analyze(
@@ -163,7 +164,7 @@ class_names = construct_class_names()
 webcam_stream = WebcamStream(stream_id=0)  # stream_id = 0 is for primary camera
 webcam_stream.start()
 
-neural_network = cv2.dnn_DetectionModel('ssd_weights.pb', 'ssd_mobilenet_coco_cfg.pbtxt')
+neural_network = cv2.dnn_DetectionModel('weights/ssd_weights.pb', 'weights/ssd_mobilenet_coco_cfg.pbtxt')
 # define whether we run the algorithm with CPU or with GPU
 # WE ARE GOING TO USE CPU !!!
 neural_network.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
@@ -174,7 +175,7 @@ neural_network.setInputMean((127.5, 127.5, 127.5))
 neural_network.setInputSwapRB(True)
 
 # Path to the Haar cascade file for face detection
-face_cascade_Path = "haarcascade_frontalface_default.xml"
+face_cascade_Path = "weights/haarcascade_frontalface_default.xml"
 
 # Create a face cascade classifier
 faceCascade = cv2.CascadeClassifier(face_cascade_Path)

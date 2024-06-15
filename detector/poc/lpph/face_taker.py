@@ -56,7 +56,7 @@ def save_name(face_id: int, face_name: str, filename: str) -> None:
 
 if __name__ == '__main__':
     directory = 'images'
-    cascade_classifier_filename = 'haarcascade_frontalface_default.xml'
+    cascade_classifier_filename = '../../weights/haarcascade_frontalface_default.xml'
     names_json_filename = 'names.json'
 
     # Create 'images' directory if it doesn't exist

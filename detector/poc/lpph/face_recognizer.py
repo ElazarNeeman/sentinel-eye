@@ -21,7 +21,7 @@ if __name__ == "__main__":
     recognizer.read('trainer.yml')
     print(recognizer)
     # Path to the Haar cascade file for face detection
-    face_cascade_Path = "haarcascade_frontalface_default.xml"
+    face_cascade_Path = "../../weights/haarcascade_frontalface_default.xml"
 
     # Create a face cascade classifier
     faceCascade = cv2.CascadeClassifier(face_cascade_Path)

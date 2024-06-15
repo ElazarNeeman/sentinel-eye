@@ -4,7 +4,7 @@ from operator import itemgetter
 import cv2
 from deepface import DeepFace
 
-img1 = r"test-faces.jpg"
+img1 = r"test_images\test-faces.jpg"
 
 
 # img2 = r"images\Users-1-7.jpg"
@@ -29,7 +29,7 @@ for f in faces:
     x, y, w, h, left_eye, right_eye = itemgetter('x', 'y', 'w', 'h', 'left_eye', 'right_eye')(f['facial_area'])
     # print(x, y, w, h)
     img = cv2.rectangle(img=img, pt1=(x, y), pt2=(x + w, y + h), color=(0, 255, 0), thickness=2)
-    res = DeepFace.find(img_path=f['face'], db_path="im_db_judges1", align=False, enforce_detection=False, silent=True)
+    res = DeepFace.find(img_path=f['face'], db_path="im_db_judges", align=False, enforce_detection=False, silent=True)
 
     name = get_name(res)
     if name is None:
@@ -44,13 +44,3 @@ cv2.imshow("Processed", img)
 cv2.waitKey(0)
 name = input("Press enter to exit")
 
-# represent_faces = DeepFace.represent(img1, align=True)
-# print(faces)
-
-# res = DeepFace.verify(img1_path=img1, img2_path="im_db/revital.jpg", align=False,
-#                       enforce_detection=False)
-
-# res = DeepFace.find(img_path=img1, db_path="im_db", align=False,
-#                     enforce_detection=False)
-
-# print(get_name(res))

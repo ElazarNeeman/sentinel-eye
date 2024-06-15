@@ -5,7 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18bdb72a-ac12-4c15-bf28-dc58dc1002c2" name="Changes" comment="initial commit">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/im_db_team/Elazar-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/im_db_team/Elazar-02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/im_db_team/Itai-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/im_db_team/Itai-02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/im_db_team/Lina-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/im_db_team/Ofer-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/im_db_team/Revital-01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deep_judge_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/deep_judge_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/face_recognizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/poc/lpph/face_recognizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/face_taker.py" beforeDir="false" afterPath="$PROJECT_DIR$/poc/lpph/face_taker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/face_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/poc/lpph/face_train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haarcascade_frontalface_default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weights/haarcascade_frontalface_default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/im_db_judges1/Adi Sofer-01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Adi Sofer-01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/im_db_judges1/Barak Regev-01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Barak Regev-01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/im_db_judges1/Dror Bin-01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Dror Bin-01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/im_db_judges1/Elazar-01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Elazar-01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/im_db_judges1/Elazar-02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Elazar-02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/im_db_judges1/Izhar Shai-01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Izhar Shai-01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/im_db_judges1/Lili Ben Ami-01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Lili Ben Ami-01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/im_db_judges1/Meissam Jaljuli-01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Meissam Jaljuli-01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/im_db_judges1/Meissam Jaljuli-02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Meissam Jaljuli-02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/im_db_judges1/Revital-01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Revital-01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/im_db_judges1/Revital-02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Revital-02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/im_db_judges1/Shira Lev Ami-01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/im_db_judges/Shira Lev Ami-01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssd_mobilenet_coco_cfg.pbtxt" beforeDir="false" afterPath="$PROJECT_DIR$/weights/ssd_mobilenet_coco_cfg.pbtxt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssd_weights.pb" beforeDir="false" afterPath="$PROJECT_DIR$/weights/ssd_weights.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-faces.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/test_images/test-faces.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_stream_df.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_stream_df.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,21 +45,32 @@
       <option value="directory" />
     </option>
   </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "ElazarNeeman"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ElazarNeeman&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/ElazarNeeman/sentinel-eye.git",
-    "accountId": "9f846cef-1666-4013-aa45-0c10776a5029"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ElazarNeeman/sentinel-eye.git&quot;,
+    &quot;accountId&quot;: &quot;9f846cef-1666-4013-aa45-0c10776a5029&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -42,18 +81,65 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.video_stream_df.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/src/github/sentinel-eye/detector/test_images",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "vcs.Git",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="detector" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="detector" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\src\github\sentinel-eye\detector\test_images" />
+      <recent name="C:\src\github\sentinel-eye\detector\weights" />
+      <recent name="C:\src\github\sentinel-eye\detector\poc\lpph" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="video_stream_df" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="detector" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/video_stream_df.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.video_stream_df" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -73,6 +159,7 @@
       <workItem from="1715618128341" duration="73000" />
       <workItem from="1715618260545" duration="88000" />
       <workItem from="1715618384324" duration="990000" />
+      <workItem from="1718435468691" duration="2410000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -102,5 +189,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/detector$video_stream_df.coverage" NAME="video_stream_df Coverage Results" MODIFIED="1718437422428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
