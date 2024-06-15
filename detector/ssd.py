@@ -9,7 +9,7 @@ SSD_INPUT_SIZE = 320
 
 
 # read the class labels
-def construct_class_names(file_name='class_names'):
+def construct_class_names(file_name=r'weights/class_names'):
     with open(file_name, 'rt') as file:
         names = file.read().rstrip('\n').split('\n')
 

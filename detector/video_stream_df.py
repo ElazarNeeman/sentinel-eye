@@ -6,6 +6,7 @@ from deepface import DeepFace
 from identity import get_name
 from ssd import SingleShotDetector
 from video import VideoStream
+from viola_jones_face_detector import ViolaJonesFaceDetector
 
 
 def process(img):
@@ -20,25 +21,7 @@ def process(img):
 
 
 def show_detected_faces(img, person_position):
-    try:
-        (px, py, pw, ph) = person_position
-        gray = cv2.cvtColor(img[py:py + ph, px:px + pw], cv2.COLOR_BGR2GRAY)
-    except Exception as e:
-        print(e)
-        return
-
-    faces = faceCascade.detectMultiScale(
-        gray,
-        scaleFactor=1.2,
-        minNeighbors=5,
-        minSize=(int(minW), int(minH)),
-    )
-
-    for (x, y, w, h) in faces:
-
-        x = x + px
-        y = y + py
-        detected_face = img[y:y + h, x:x + w]
+    for (x, y, w, h, detected_face) in vj.detect_faces(img, person_position):
 
         res = DeepFace.find(img_path=detected_face, db_path="im_db_team", align=False,
                             detector_backend="skip",
@@ -46,47 +29,32 @@ def show_detected_faces(img, person_position):
 
         name = get_name(res)
 
-        demographies = DeepFace.analyze(
-            img_path=detected_face,
-            actions=("emotion",),
-            detector_backend="skip",
-            enforce_detection=False,
-            silent=True,
-        )
+        face_emotions = DeepFace.analyze(img_path=detected_face, actions=("emotion",),
+                                         detector_backend="skip",
+                                         enforce_detection=False, silent=True)
 
         # Draw a rectangle around the detected face
         cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
 
-        confidence = ""
-
         if name is None:
             name = "Who are you?"
 
-        dominant_emotion = demographies[0]['dominant_emotion']
+        dominant_emotion = face_emotions[0]['dominant_emotion']
+
         # Display the recognized name and confidence level on the image
         cv2.putText(img, f"{name}, ({dominant_emotion})", (x + 5, y - 5), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1,
                     (255, 255, 255), 2)
+
         print(name, " ", dominant_emotion)
-        cv2.putText(img, confidence, (x + 5, y + h - 5), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (255, 255, 0), 1)
         cv2.imshow(f'Face {name}', detected_face)
-        # cv2.imshow(f'Gray Face {name}', gray_face)
-        # add detection
 
 
 webcam_stream = VideoStream(stream_id=0)  # stream_id = 0 is for primary camera
 webcam_stream.start()
 
-# Path to the Haar cascade file for face detection
-face_cascade_Path = "weights/haarcascade_frontalface_default.xml"
-
-# Create a face cascade classifier
-faceCascade = cv2.CascadeClassifier(face_cascade_Path)
-
-# Minimum width and height for the window size to be recognized as a face
-minW = 0.1 * webcam_stream.vcap.get(3)
-minH = 0.1 * webcam_stream.vcap.get(4)
-
 ssd = SingleShotDetector()
+vj = ViolaJonesFaceDetector(webcam_stream)
+
 # processing frames in input stream
 num_frames_processed = 0
 
