@@ -11,9 +11,15 @@ class Detector:
     def __init__(self):
         self.ssd = SingleShotDetector()
         self.face_detector = FaceDetector()
+        self.detected_objects = []
+        self.detected_identities = {}
 
     def process(self, img):
+        self.detected_objects = []
+        self.detected_identities = {}
+
         for x, y, w, h, obj_class_name in self.ssd.get_detected_objects(img):
+            self.detected_objects.append((x, y, w, h, obj_class_name))
             print(obj_class_name)
             cv2.rectangle(img, (x, y), (x + w, y + h), color=(0, 255, 0), thickness=5)
             cv2.putText(img, obj_class_name.upper(), (x, y - 10),
@@ -23,7 +29,7 @@ class Detector:
                 self.identify_person(img, (x, y, w, h))
 
     def identify_person(self, img, person_position):
-        for (x, y, w, h, detected_face) in self.face_detector.detect_faces(img, person_position):
+        for (x, y, w, h, detected_face, person_img) in self.face_detector.detect_faces(img, person_position):
             # Draw a rectangle around the detected face
             cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
 
@@ -35,6 +41,11 @@ class Detector:
 
             print(name, " ", dominant_emotion)
             cv2.imshow(f'Face {name}', detected_face)
+            self.detected_identities[name] = {
+                'face': detected_face,
+                'person': person_img,
+                'emotion': dominant_emotion,
+            }
 
     def get_person_name(self, detected_face):
         res = DeepFace.find(img_path=detected_face, db_path="im_db_team", align=False,

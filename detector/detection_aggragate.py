@@ -1,3 +1,5 @@
+import time
+
 import numpy as np
 
 
@@ -95,3 +97,14 @@ class DetectionAggregate:
         return DetectionAggregate(combined_detections,
                                   total_frames=first.total_frames + second.total_frames,
                                   faces=combined_faces)
+
+    def add_detector_frame(self, detector):
+        frame_time = time.time()
+        self.add_frame()
+        # iterate key value detected_identities
+        for name, detected_identity in detector.detected_identities.items():
+            person_img = detected_identity['person']
+            emotion = detected_identity['emotion']
+            self.add_face_detection(name, 1, emotion, frame_time, person_img)
+
+        return frame_time

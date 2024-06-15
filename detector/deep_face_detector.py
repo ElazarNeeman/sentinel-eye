@@ -23,6 +23,6 @@ class FaceDetector:
                 continue
 
             detected_face = img[y:y + h, x:x + w]
-            results.append((x, y, w, h, detected_face))
+            results.append((x, y, w, h, detected_face, person))
 
         return results
