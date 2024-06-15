@@ -1,43 +1,22 @@
-import cv2
 import time
 
-import numpy as np
+import cv2
 from deepface import DeepFace
 
 from identity import get_name
+from ssd import SingleShotDetector
 from video import VideoStream
 
-# defining a helper class for implementing multi-threaded processing
 
-
-# we are not going to bother with objects less than 50% probability
-THRESHOLD = 0.4
-# the lower the value: the fewer bounding boxes will remain
-SUPPRESSION_THRESHOLD = 0.3
-SSD_INPUT_SIZE = 320
-
-
-# read the class labels
-def construct_class_names(file_name='class_names'):
-    with open(file_name, 'rt') as file:
-        names = file.read().rstrip('\n').split('\n')
-
-    return names
-
-
-def show_detected_objects(img, boxes_to_keep, all_bounding_boxes, object_names, class_ids):
-    for index in boxes_to_keep:
-        box = all_bounding_boxes[index]
-        x, y, w, h = box[0], box[1], box[2], box[3]
-        obj_class_name = object_names[class_ids[index] - 1]
+def process(img):
+    for x, y, w, h, obj_class_name in ssd.get_detected_objects(img):
         print(obj_class_name)
         cv2.rectangle(img, (x, y), (x + w, y + h), color=(0, 255, 0), thickness=5)
-        cv2.putText(img, obj_class_name.upper(), (box[0], box[1] - 10),
+        cv2.putText(img, obj_class_name.upper(), (x, y - 10),
                     cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.7, (0, 255, 0), 2)
 
         if obj_class_name == "person":
-            if cnt % skip_frames == 0:
-                show_detected_faces(img, (x, y, w, h))
+            show_detected_faces(img, (x, y, w, h))
 
 
 def show_detected_faces(img, person_position):
@@ -94,20 +73,8 @@ def show_detected_faces(img, person_position):
         # add detection
 
 
-class_names = construct_class_names()
-
 webcam_stream = VideoStream(stream_id=0)  # stream_id = 0 is for primary camera
 webcam_stream.start()
-
-neural_network = cv2.dnn_DetectionModel('weights/ssd_weights.pb', 'weights/ssd_mobilenet_coco_cfg.pbtxt')
-# define whether we run the algorithm with CPU or with GPU
-# WE ARE GOING TO USE CPU !!!
-neural_network.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
-neural_network.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
-neural_network.setInputSize(SSD_INPUT_SIZE, SSD_INPUT_SIZE)
-neural_network.setInputScale(1.0 / 127.5)
-neural_network.setInputMean((127.5, 127.5, 127.5))
-neural_network.setInputSwapRB(True)
 
 # Path to the Haar cascade file for face detection
 face_cascade_Path = "weights/haarcascade_frontalface_default.xml"
@@ -119,12 +86,10 @@ faceCascade = cv2.CascadeClassifier(face_cascade_Path)
 minW = 0.1 * webcam_stream.vcap.get(3)
 minH = 0.1 * webcam_stream.vcap.get(4)
 
-cnt = 0
-persons = 0
-skip_frames = 1
-
+ssd = SingleShotDetector()
 # processing frames in input stream
 num_frames_processed = 0
+
 start = time.time()
 while True:
     if webcam_stream.stopped is True:
@@ -132,17 +97,7 @@ while True:
     else:
         frame = webcam_stream.read()
 
-        # adding a delay for simulating time taken for processing a frame
-
-    class_label_ids, confidences, bbox = neural_network.detect(frame)
-    bbox = list(bbox)
-    confidences = np.array(confidences).reshape(1, -1).tolist()[0]
-
-    # these are the indexes of the bounding boxes we have to keep
-    box_to_keep = cv2.dnn.NMSBoxes(bbox, confidences, THRESHOLD, SUPPRESSION_THRESHOLD)
-    persons = 0
-    show_detected_objects(frame, box_to_keep, bbox, class_names, class_label_ids)
-
+    process(frame)
     num_frames_processed += 1
 
     cv2.imshow('frame', frame)

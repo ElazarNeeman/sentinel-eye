@@ -4,24 +4,9 @@ from operator import itemgetter
 import cv2
 from deepface import DeepFace
 
+from identity import get_name
+
 img1 = r"test_images\test-faces.jpg"
-
-
-# img2 = r"images\Users-1-7.jpg"
-
-
-def get_name(_res):
-    if len(_res) > 0 and len(_res[0]['identity']) > 0:
-        identity_path = _res[0]['identity'][0]
-        _, identity_file = os.path.split(identity_path)
-
-        # print(identity_file)
-        name = identity_file.split('-')[-2]
-        return name
-
-    return None
-
-
 img = cv2.imread(img1)
 faces = DeepFace.extract_faces(img, align=True)
 
@@ -43,4 +28,3 @@ for f in faces:
 cv2.imshow("Processed", img)
 cv2.waitKey(0)
 name = input("Press enter to exit")
-
