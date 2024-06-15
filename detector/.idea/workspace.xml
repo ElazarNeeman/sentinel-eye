@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18bdb72a-ac12-4c15-bf28-dc58dc1002c2" name="Changes" comment="extract ssd class">
-      <change afterPath="$PROJECT_DIR$/viola_jones_face_detector.py" afterDir="false" />
+    <list default="true" id="18bdb72a-ac12-4c15-bf28-dc58dc1002c2" name="Changes" comment="extract vj class">
+      <change afterPath="$PROJECT_DIR$/deep_face_detector.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_frame_detector.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class_names" beforeDir="false" afterPath="$PROJECT_DIR$/weights/class_names" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssd.py" beforeDir="false" afterPath="$PROJECT_DIR$/ssd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_stream_df.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_stream_df.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_stream_df.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +86,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="video_stream_df" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="detector" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -101,7 +100,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/video_stream_df.py" />
+      <option name="SCRIPT_NAME" value="C:\src\github\sentinel-eye\detector\app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -112,7 +111,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.video_stream_df" />
+        <item itemvalue="Python.app" />
       </list>
     </recent_temporary>
   </component>
@@ -135,7 +134,7 @@
       <workItem from="1715618128341" duration="73000" />
       <workItem from="1715618260545" duration="88000" />
       <workItem from="1715618384324" duration="990000" />
-      <workItem from="1718435468691" duration="7035000" />
+      <workItem from="1718435468691" duration="10032000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -169,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718441356053</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="extract vj class">
+      <option name="closed" value="true" />
+      <created>1718442929311</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1718442929311</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,9 +198,10 @@
     <MESSAGE value="folder rearrangement" />
     <MESSAGE value="extract methods" />
     <MESSAGE value="extract ssd class" />
-    <option name="LAST_COMMIT_MESSAGE" value="extract ssd class" />
+    <MESSAGE value="extract vj class" />
+    <option name="LAST_COMMIT_MESSAGE" value="extract vj class" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/detector$video_stream_df.coverage" NAME="video_stream_df Coverage Results" MODIFIED="1718441259433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/detector$video_stream_df.coverage" NAME="video_stream_df Coverage Results" MODIFIED="1718444189322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
