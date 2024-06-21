@@ -39,9 +39,6 @@ class DetectionAggregate:
         _name_detections['emotions'] = _emotions
         self.detections[_name] = _name_detections
 
-    def add_frame(self):
-        self.total_frames += 1
-
     def has_detections(self) -> bool:
         return len(self.detections) > 0
 
@@ -98,9 +95,9 @@ class DetectionAggregate:
                                   total_frames=first.total_frames + second.total_frames,
                                   faces=combined_faces)
 
-    def add_detector_frame(self, detector):
+    def add_frame(self, detector):
         frame_time = time.time()
-        self.add_frame()
+        self.total_frames += 1
         # iterate key value detected_identities
         for name, detected_identity in detector.detected_identities.items():
             person_img = detected_identity['person']
