@@ -1,30 +1,7 @@
-# Real Time Face Recognition (OpenCV)
+# Person detection and recognition using OpenCV
 
-Create a fast real-time face recognition app with a few lines of Python code. The scripts have been tested. **Please make sure to go through the code for more details on how to debug**
 
-![gif](gif.gif)
-
-## Steps:
-
-`face_taker.py`
-
-1) Take pictures using the `face_taker.py` script. After you enter the user name, the script will save 30 images of your face in the `images` folder and `names.json` file with association between ID number and user name. The ID number represents a single face. Note: Make sure your face is centered. The window will collapse when all the 30 pictures are taken.
-
-`face_train.py`
-
-2) The `face_tain.py` script will train a model to recognize all the faces from the 30 images taken using `face_taker.py` and save the training output in the `trainer.yml` file.
-
-`face_recognizer.py`
-
-3) The `face_recognizer.py` is the main script. The program will recognize the face according to the ID. i.e., If Joe has an ID = 1, his name should appear in the dictionary of `names.json` as attribute 1 like such:
-
-```json
-{
-    "1": "Joe"
-}
-```
-
-Requirements:
+## Setup and running
 
 Install [pyenv win](https://github.com/pyenv-win/pyenv-win)
 
@@ -39,5 +16,21 @@ to setup virtual environment use the commands below
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
+```
+
+
+before running set the following environment variables
+get the api_hash and app_id from https://my.telegram.org, under API Development
+create channel and set the channel id (usually negative number)
+
+```cmd
+set TELEGRAM_APP_ID=?
+set TELEGRAM_API_HASH=?
+set TELEGRAM_CHANNEL_ID=?
+```
+
+to run the code use the command below
+```cmd
+venv\Scripts\python app.py
 ```
 
