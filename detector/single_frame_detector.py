@@ -20,12 +20,12 @@ class Detector:
 
         for x, y, w, h, obj_class_name in self.ssd.get_detected_objects(img):
             self.detected_objects.append((x, y, w, h, obj_class_name))
-            print(obj_class_name)
-            cv2.rectangle(img, (x, y), (x + w, y + h), color=(0, 255, 0), thickness=5)
-            cv2.putText(img, obj_class_name.upper(), (x, y - 10),
-                        cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.7, (0, 255, 0), 2)
+            print(x, y, w, h, obj_class_name)
 
             if obj_class_name == "person":
+                cv2.rectangle(img, (x, y), (x + w, y + h), color=(0, 255, 0), thickness=5)
+                cv2.putText(img, obj_class_name.upper(), (x, y - 10),
+                            cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.7, (0, 255, 0), 2)
                 self.identify_person(img, (x, y, w, h))
 
     def identify_person(self, img, person_position):
@@ -48,7 +48,7 @@ class Detector:
             }
 
     def get_person_name(self, detected_face):
-        res = DeepFace.find(img_path=detected_face, db_path="im_db_team", align=False,
+        res = DeepFace.find(img_path=detected_face, db_path="family", align=False,
                             detector_backend="skip",
                             enforce_detection=False, silent=True)
 

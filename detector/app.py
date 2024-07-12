@@ -5,12 +5,9 @@ import cv2
 
 from detection_aggragate import DetectionAggregate
 from detection_alarm import DetectionAlarm
+from env import SECONDS_BETWEEN_DETECTIONS, STREAM_ID, QUIT_KEY
 from single_frame_detector import Detector
 from video import VideoStream
-
-STREAM_ID = 1
-QUIT_KEY = ord('q')
-SECONDS_BETWEEN_DETECTIONS = 10
 
 
 def process_frame(frame, detector, detection_aggregate):
@@ -23,7 +20,7 @@ async def handle_detections(detection_aggregate, alarm, frame_time):
     if detection_aggregate.has_detections():
         print(f"{time.ctime(frame_time)}: detections: {detection_aggregate.get_data()}")
         try:
-            await alarm.add_detection(detection_aggregate)
+            await alarm.add_detection(detection_aggregate, min_frames=3)
         except Exception as e:
             print(e)
 
@@ -33,7 +30,7 @@ def detection_aggregate_time_passed(old_epoch, frame_time):
 
 
 async def main():
-    video_stream = VideoStream(stream_id=1)  # stream_id = 0 is for primary camera
+    video_stream = VideoStream(stream_id=STREAM_ID)  # stream_id = 0 is for primary camera
     detector = Detector()
     detection_aggregate = DetectionAggregate()
     alarm = DetectionAlarm()

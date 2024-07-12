@@ -6,7 +6,7 @@ import cv2
 from telethon import TelegramClient, events
 
 from detection_aggragate import DetectionAggregate
-from telegram import TELEGRAM_CHANNEL_ID, TELEGRAM_API_ID, TELEGRAM_API_HASH
+from env import TELEGRAM_API_ID, TELEGRAM_API_HASH, TELEGRAM_CHANNEL_ID
 
 
 class DetectionAlarm:

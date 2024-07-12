@@ -9,3 +9,4 @@ tf_keras==2.16.0
 #pywhatkit
 
 Telethon==1.35.0 #telegram
+environs==11.0.0
